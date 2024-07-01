@@ -1,0 +1,72 @@
+﻿@model Transactions
+
+@{
+    ViewData["Title"] = "New Transaction";
+}
+
+<div class="d-flex justify-content-around">
+    <h1 class="display-4">New Transaction</h1>
+</div>
+<br />
+
+<div class="container w-75 p-3 shadow mb-5 bg-white rounded">
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="CardNumber" for="enterCardNumber">Card Number</label>
+            <input asp-for="CardNumber" type="text" class="form-control" id="enterCardNumber" placeholder="XXXXXXXXXXXXXXXX" autocomplete="cc-number" />
+            <span asp-validation-for="CardNumber" class="text-danger"></span>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col">
+                <label asp-for="TID" for="enterTID">Terminal ID</label>
+                <input asp-for="TID" type="text" class="form-control" id="enterTID" placeholder="" autocomplete="off" />
+                <span asp-validation-for="TID" class="text-danger"></span>
+            </div>
+
+            <div class="col">
+                <label asp-for="MID" for="enterMID">Merchant ID</label>
+                <input asp-for="MID" type="text" class="form-control" id="enterMID" placeholder="" autocomplete="off" />
+                <span asp-validation-for="MID" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col">
+                <label asp-for="Batch" for="enterBatch">Batch Number</label>
+                <input asp-for="Batch" type="number" class="form-control" id="enterBatch" placeholder="" autocomplete="off" />
+                <span asp-validation-for="Batch" class="text-danger"></span>
+            </div>
+
+            <div class="col">
+                <label asp-for="Invoice" for="enterInvoice">Invoice Number</label>
+                <input asp-for="Invoice" type="number" class="form-control" id="enterInvoice" placeholder="" autocomplete="off" />
+                <span asp-validation-for="Invoice" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            <label asp-for="Amount" for="enterAmount">Amount</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">INR</div>
+                </div>
+                <input asp-for="Amount" type="text" class="form-control" id="enterAmount" autocomplete="off" />
+            </div>
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+
+        <br />
+        <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </div>
+    </form>
+</div>
+
+<!--Client side validation enabler, doesn't hit server-->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

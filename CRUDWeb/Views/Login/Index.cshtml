@@ -1,0 +1,38 @@
+﻿@model CRUDWeb.Models.Accounts
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout1";
+}
+
+<div class="d-flex justify-content-around">
+    <h1 class="display-4">Login</h1>
+</div>
+<br />
+<div class="container w-50 p-3 shadow mb-5 bg-white rounded">
+        <form method = "post" asp-action="Login">
+            <div class="form-group">
+                <label asp-for="Email">Email Address</label>
+                <input asp-for="Email" type="text" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Password"></label>
+            <input asp-for="Password" type="text" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br />
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+        </div>
+        </form>
+        <br />
+        <div class="d-flex justify-content-center">
+        Don't have an account?&nbsp;<a asp-controller="Login" asp-action="Register">Register here.</a>
+        </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -22,7 +22,7 @@ namespace CRUDWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int? id)
         {
-            if(id == null || id == 0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
@@ -35,7 +35,7 @@ namespace CRUDWeb.Controllers
                 return RedirectToAction("Index");
             }
             TempData["Error"] = "Error in deletion.";
-             return NotFound();
+            return NotFound();
         }
 
 

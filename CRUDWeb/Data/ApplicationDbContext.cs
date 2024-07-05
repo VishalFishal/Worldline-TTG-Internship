@@ -12,5 +12,6 @@ namespace CRUDWeb.Data
         }
 
         public DbSet<Transactions> Transactions { get; set; }
+        public DbSet<Accounts> Accounts { get; set; }
     }
 }

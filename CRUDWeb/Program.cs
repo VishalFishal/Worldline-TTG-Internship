@@ -1,5 +1,8 @@
+using CRUDWeb;
 using CRUDWeb.Data;
 using Microsoft.EntityFrameworkCore;
+
+//client.Connect(hostname, port);
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +23,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseWebSockets();
 
 app.UseRouting();
 
@@ -27,6 +31,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();

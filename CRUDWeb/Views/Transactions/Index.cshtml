@@ -3,6 +3,7 @@
     ViewData["Title"] = "History";
 }
 
+
 <div class="d-flex justify-content-around">
     <h1 class="display-4">Transaction History</h1>
 </div>
@@ -22,7 +23,7 @@
             <th>Invoice No.</th>
             <th>Amount</th>
             <th>Date and Time (UTC)</th>
-            <th></th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -38,13 +39,18 @@
                 <td>@obj.Invoice</td>
                 <td>@obj.Amount</td>
                 <td>@obj.TransactionDateTime</td>
-                    <form asp-action="Delete" method="post">
-                    <input type="hidden" name="id" value="@obj.ID"/>
-                <td><button class="btn btn-danger" type="submit">Delete</button></td>
-                    </form>
+                    <td>
+                        <form asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@obj.ID" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+
             </tr>
         }
     </tbody>
 </table>
 </div>
+
+
 

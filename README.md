@@ -8,7 +8,7 @@ PostgreSQL is backend
 3. Basic login and register logic
 
 ## Things to add:
-1. Session handling
+1. Session handling, logout logic
 2. More validation for registering (no repeat emails)
 3. Column in transactions table as foreign key for accounts
 4. ISO 8583 implementation, hexa studying and
